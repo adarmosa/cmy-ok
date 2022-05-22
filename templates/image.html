@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Image Upload
+{% endblock %}
+
+
+{% block main %}
+
+<!-- Display image if there is a file -->
+{% if filename %}
+    <div>
+        <img src="{{ url_for('display_image', filename=filename) }}">
+        <!-- Remind user to delete image when done -->
+            <br><br>For your privacy and/or to upload a new image, <b>please delete the above image from our server</b> before you leave this page:
+            <!-- Button to delete image from uploads folder -->
+            <input type="button" onclick="location.href='/delete/{{filename}}';" value="&#128686; delete">
+    </div>
+{% endif %}
+
+{% if not filename %}
+    <form action="/image" method="post" enctype="multipart/form-data">
+      <!-- Form to upload image -->
+      <div class="form-row form-input-center align-items-center" style="width:450px;">
+        <label for="file">Upload an image to display so we can read its colors:</label><br>
+            <div style="float:left;">
+                <!-- Form to choose image -->
+                <input type="file" name="file" accept="image/*" class="form-control" autocomplete="off" required>
+            </div>
+            <div style="display:inline; float:right;">
+                <!-- Button to submit and upload image-->
+                &nbsp; <input type="submit" value="submit" style="padding:5px;">
+              <div>
+      </div>
+    </form>
+{% endif %}
+
+{% endblock %}

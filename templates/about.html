@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    about
+{% endblock %}
+
+{% block main %}
+
+<div style="text-align:left; max-width:700px; position:absolute; left:50%; -ms-transform:translate(-50%); transform:translate(-50%);">
+    <p>
+        This web app runs with the help of <a href="https://chir.ag/projects/name-that-color/">Name that Color</a> by Chirag Mehta and uses the <a href="https://people.csail.mit.edu/jaffer/Color/nbs-iscc.txt">NBS/ISCC Color System</a> as a color dictionary.
+    </p>
+
+    <br>
+
+    <h3>Why cmy-OK?</h3>
+    <p>
+        Can't tell if your rendered sky is too purple? Grass too blue?
+        cmy-OK is meant to help colorblind designers identify colors as seen and understood by non-colorblind others.
+        <img src="https://www.cs.cornell.edu/courses/cs1110/2013sp/assignments/assignment3/images/wolfmaier-spectrum.jpg"></img>
+    </p>
+
+    <br>
+
+    <h3>How to use?</h3>
+    <img src="/static/reference/how.png">
+    <br><br>
+    <p>
+        <b>1.</b> Click on the color-input field at the top of the page (or at the lower-center if on the index page) to open up a mini-window.
+        <b>2.</b> Choose a color either by clicking one within the field, or clicking the eyedropper button under the field and selecting a pixel anywhere on your screen.
+        You may also input by value and switch between RGB, HSL, and HEX by clicking the lower part of this mini-window.
+    </p>
+
+    <br>
+
+    <h3>No I mean, why the name?</h3>
+    <p>
+        Oh. Well, CMYK refers to the four ink plates used in some color printing:
+        cyan, magenta, yellow, and key (black).
+        This web app is named cmy-OK because your file is more likely to be ok after using this.
+        But I agree, it's not a great name because cmy-OK is actually only usable on digital images and colors.
+    </p>
+
+    <br>
+
+    <h3>More resources</h3>
+    <p>
+        <a href="https://people.csail.mit.edu/jaffer/Color/Dictionaries">Color-Name Dictionaries</a>
+        <br>
+        <a href="https://chir.ag/projects/name-that-color/">Name that Color, developed by Chirag Mehta</a>
+        <br>
+        <a href="https://encycolorpedia.com/">Encycolorpedia</a>
+    </p>
+</div>
+
+{% endblock %}
